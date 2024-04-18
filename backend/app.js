@@ -24,6 +24,13 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+app.get("/", (req, res) => {
+  res.json({
+    success: true,
+    message: "Welcome to Job Portal API",
+  })
+});
+
 app.use(
   fileUpload({
     useTempFiles: true,
